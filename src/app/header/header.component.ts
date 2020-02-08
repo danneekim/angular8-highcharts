@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  timestamp = '12:00 AM';
+  profileName = 'Profile'
 
   constructor() { }
 
