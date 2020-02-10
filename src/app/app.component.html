@@ -5,7 +5,7 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div *ngIf="currentUser" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav nav-tabs mr-auto">
         <li class="nav-item active">
           <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
@@ -34,9 +34,9 @@
           <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             <i class="fa fa-user"></i>
-            {{profileName}} </a>
+            {{currentUser.firstName}} </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-            <a class="dropdown-item waves-effect waves-light" routerLink="#">Log out</a>
+            <a class="dropdown-item waves-effect waves-light" (click)="logout()">Log out</a>
           </div>
         </li>
       </ul>
