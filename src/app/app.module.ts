@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
+import { fakeBackendProvider } from './_helpers/fakeBackend';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,10 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
