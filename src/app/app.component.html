@@ -1,5 +1,87 @@
-<app-header></app-header>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Angular 8 <span style="color: #47475C">Highcharts</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav nav-tabs mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Fetch Data
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="#">Action</a>
+            <a class="dropdown-item" routerLink="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link disabled">Timestamp Updated: {{timestamp}}</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-user"></i>
+            {{profileName}} </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+            <a class="dropdown-item waves-effect waves-light" routerLink="#">Log out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
+
+<footer class="footer mt-auto bg-light fixed-bottom">
+  <div class="container-fluid py-2">
+    <div class="row">
+      <!-- Icon/Links -->
+      <div class="col-4">
+        <ul class="nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/danneekim/angular8-highcharts">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/dannee-kim/">
+              <i class="fa fa-linkedin fa-lg"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:dannee.kim.wd@gmail.com">
+              <i class="fa fa-google fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Copyright -->
+      <div class="col-4 py-2">
+        <div class="footer-copyright text-center">© 2020 Copyright:
+          <a>Dannee Kim</a>
+        </div>
+      </div>
+      <!-- Placeholder -->
+      <div class="col-4">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- <app-footer></app-footer> -->

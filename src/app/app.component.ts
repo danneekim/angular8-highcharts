@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular8-highcharts';
+  timestamp = '12:00 AM';
+  profileName = 'Profile';
+  
 }
