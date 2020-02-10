@@ -1,1 +1,1 @@
-export * from './fakebackend';
+export * from './fake-backend';
