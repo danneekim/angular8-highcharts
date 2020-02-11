@@ -11,7 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_directives';
 
 import { fakeBackendProvider } from './_helpers/fake-backend';
-import { AlertService, AuthenticationService } from './_services';
+import { AlertService, AuthenticationService, UserService } from './_services';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { AlertService, AuthenticationService } from './_services';
   providers: [
     AlertService,
     AuthenticationService,
+    UserService,
     // provider used to create fake backend
     fakeBackendProvider
   ],
