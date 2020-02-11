@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://danneekim.github.io/angular8-highcharts/'
+  apiUrl: 'http://localhost:4000'
 };
