@@ -24,6 +24,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    // set current User profile to header
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
