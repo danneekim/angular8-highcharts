@@ -8,15 +8,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AlertComponent } from './_directives';
 
 import { fakeBackendProvider } from './_helpers/fake-backend';
+import { AlertService, AuthenticationService } from './_services';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,8 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
     HttpClientModule
   ],
   providers: [
+    AlertService,
+    AuthenticationService,
     // provider used to create fake backend
     fakeBackendProvider
   ],
