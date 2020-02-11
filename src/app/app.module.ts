@@ -12,6 +12,7 @@ import { AlertComponent } from './_directives';
 
 import { fakeBackendProvider , JwtInterceptor, ErrorInterceptor} from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
+import { AuthGuard } from './_guards';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AlertService, AuthenticationService, UserService } from './_services';
     HttpClientModule
   ],
   providers: [
+    AuthGuard,
     AlertService,
     AuthenticationService,
     UserService,
