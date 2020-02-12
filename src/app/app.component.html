@@ -8,7 +8,7 @@
     <div *ngIf="currentUser" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav nav-tabs mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">Home</a>
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="#">Link</a>
@@ -45,6 +45,9 @@
 </nav>
 
 <div class="container">
+  <div class="col-md-6 offset-md-3 mt-5">
+    <alert></alert>
+  </div>
   <router-outlet></router-outlet>
 </div>
 
