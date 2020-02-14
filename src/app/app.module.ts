@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_directives';
 
-import { fakeBackendProvider , JwtInterceptor, ErrorInterceptor} from './_helpers';
+import { fakeBackendProvider , JwtInterceptor, ErrorInterceptor, ApiUrlInterceptor} from './_helpers';
 import { AlertService, AuthenticationService, UserService, MarketDataService } from './_services';
 import { AuthGuard } from './_guards';
 
@@ -36,6 +36,7 @@ import { AuthGuard } from './_guards';
     MarketDataService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ApiUrlInterceptor, multi: true},
     // provider used to create fake backend
     fakeBackendProvider
   ],
