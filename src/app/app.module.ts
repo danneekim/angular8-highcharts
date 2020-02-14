@@ -10,9 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_directives';
 
-import { fakeBackendProvider , JwtInterceptor, ErrorInterceptor, ApiBaseUrlInterceptor} from './_helpers';
-import { AlertService, AuthenticationService, UserService, MarketDataService } from './_services';
 import { AuthGuard } from './_guards';
+import { fakeBackendProvider , JwtInterceptor, ErrorInterceptor, ApiBaseUrlInterceptor} from './_helpers';
+import { AlertService, AuthenticationService, UserService, MarketDataService, LoaderService } from './_services';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { AuthGuard } from './_guards';
     AuthenticationService,
     UserService,
     MarketDataService,
+    LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ApiBaseUrlInterceptor, multi: true},
