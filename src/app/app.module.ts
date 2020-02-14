@@ -11,7 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_directives';
 
 import { fakeBackendProvider , JwtInterceptor, ErrorInterceptor} from './_helpers';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertService, AuthenticationService, UserService, MarketDataService } from './_services';
 import { AuthGuard } from './_guards';
 
 @NgModule({
@@ -33,6 +33,7 @@ import { AuthGuard } from './_guards';
     AlertService,
     AuthenticationService,
     UserService,
+    MarketDataService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     // provider used to create fake backend
