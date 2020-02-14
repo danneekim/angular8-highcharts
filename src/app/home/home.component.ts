@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { UserService, AuthenticationService } from '../_services';
 import { Router } from '@angular/router';
+import { MarketDataService } from '../_services';
 
 @Component({
   selector: 'app-home',
@@ -18,13 +19,16 @@ export class HomeComponent implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
+    private marketDataService: MarketDataService,
     private router: Router
   ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
-   
+    this.marketDataService.getMarketData().subscribe(data => {
+      console.log(data);
+    })
   }
 
   logout() {
