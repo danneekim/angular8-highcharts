@@ -26,8 +26,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.marketDataService.getMarketData().subscribe(data => {
-      console.log(data);
+    // this.marketDataService.getMarketData().subscribe(data => {
+    //   console.log(data);
+    // })
+  }
+
+  fetchData(apiJson){
+    this.marketDataService.getMarketData(apiJson).subscribe(data => {
+      console.log(data)
     })
   }
 
