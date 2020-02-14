@@ -13,8 +13,8 @@ export class MarketDataService {
       private http: HttpClient
     ) { }
 
-    public getMarketData(){
-        return this.http.get('https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json');
+    public getMarketData(apiRoutePath){
+        return this.http.get(apiRoutePath);
     }
 
 }
