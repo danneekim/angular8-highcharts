@@ -3,7 +3,7 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class ApiUrlInterceptor implements HttpInterceptor {
+export class ApiBaseUrlInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const url = 'https://www.quandl.com/api/v3/datasets/WIKI/';
         req = req.clone({
