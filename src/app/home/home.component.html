@@ -15,6 +15,12 @@
 </div>
 <div class="row">
     <div class="col-sm json">
+        <p *ngIf="loaderService.isLoading | async">
+            Loading!
+          </p>
+          <p *ngIf="!(loaderService.isLoading | async)">
+            Not Loading!
+          </p>
         Apple Inc (AAPL) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json">AAPL JSON</a>
         <button (click)="fetchData('/AAPL.json')">APPL.JSON</button>
     </div>
