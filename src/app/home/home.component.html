@@ -13,62 +13,119 @@
         </span>
     </div>
 </div>
-<div *ngIf="!(loaderService.isLoading | async)" class="row">
+<div class="row">
     <div class="col-sm json text-center">
         <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/AAPL.json')">Apple Inc (AAPL)</button>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/APPL.json'" (change)="fetchData('/AAPL.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="Apple Inc (AAPL)">
+            </div>
         </div>
     </div>
     <div class="col-sm json text-center">
         <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/IBM.json')">International Business Machines Corp (IBM)</button>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/IBM.json'" (change)="fetchData('/IBM.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="Int'l Business Machines (IBM)">
+            </div>
         </div>
     </div>
     <div class="col-sm json text-center">
         <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/CITI.json')">Citibank (CITI)</button>
-        </div>
-    </div>
-</div>
-<div *ngIf="!(loaderService.isLoading | async)" class="row">
-    <div class="col-sm json text-center">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/AXP.json')">American Express Co. (AXP)</button>
-        </div>
-    </div>
-    <div class="col-sm json text-center">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/CVS.json')">CVS Health Corp (CVS)</button>
-        </div>
-    </div>
-    <div class="col-sm json text-center">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/GE.json')">General Electric Co (GE)</button>
-        </div>
-    </div>
-</div>
-<div *ngIf="!(loaderService.isLoading | async)" class="row">
-    <div class="col-sm json text-center">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <button class="btn btn-link" (click)="fetchData('/MSFT.json')">Microsoft Corporation (MSFT)</button>
-        </div>
-    </div>
-    <div class="col-sm json text-center">
-
-    </div>
-    <div class="col-sm json text-center">
-
-    </div>
-</div>
-<div *ngIf="loaderService.isLoading | async" class="row">
-    <div class="col-sm json">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="spinner-border" style="width: 25vh; height: 25vh;" role="status">
-                <span class="sr-only">Loading...</span>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/CITI.json'" (click)="fetchData('/CITI.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="Citibank (CITI)">
             </div>
         </div>
     </div>
 </div>
-<div class="row" >
+<div class="row">
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/AXP.json'" (click)="fetchData('/AXP.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="American Express Co. (AXP)">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/CVS.json'" (click)="fetchData('/CVS.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="CVS Health Corp (CVS)">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/GE.json'" (click)="fetchData('/GE.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="General Electric (GE)">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input [disabled]="loaderService.isLoading | async" type="radio" name="marketdatalink"
+                            id="'/MSFT.json'" (click)="fetchData('/MSFT.json')">
+                    </div>
+                </div>
+                <input [disabled]="loaderService.isLoading | async" type="text" class="form-control"
+                    value="Microsoft Corporation (MSFT)">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm json text-center">
+
+    </div>
+    <div class="col-sm json text-center">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm json"></div>
+</div>
+<div class="row">
     <div id="graphContainer"></div>
 </div>

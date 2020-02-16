@@ -67,29 +67,6 @@ export class HomeComponent implements OnInit {
       }
     ]
 
-    // rangeSelector: {
-    //   selected: 2
-    // },
-
-    // title: {
-    //   text: 'AAPL Stock Price'
-    // },
-
-    // series: [{
-    //   type: 'ohlc',
-    //   name: 'AAPL Stock Price',
-    //   data: this.marketData,
-    //   dataGrouping: {
-    //     units: [[
-    //       'week', // unit name
-    //       [1] // allowed multiples
-    //     ], [
-    //       'month',
-    //       [1, 2, 3, 4, 6]
-    //     ]]
-    //   }
-    // }]
-
   }
 
   constructor(
@@ -105,11 +82,9 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit() {
-
   }
 
   fetchData(apiJson){
-  
     this.marketDataService.getMarketData(apiJson).subscribe(data => {
       console.log(data)
       if (data){
