@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col-sm">
-        <p>To get started on one of the provided links:</p>
+        <p>Click on provided links to fetch market data:</p>
     </div>
     <div class="col-sm">
         <span style="float: right;" class="btn btn-link">
@@ -15,31 +15,43 @@
 </div>
 <div *ngIf="!(loaderService.isLoading | async)" class="row">
     <div class="col-sm json text-center">
-        <p>Apple Inc (AAPL)</p>
-        <button (click)="fetchData('/AAPL.json')">Generate Graph</button>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/AAPL.json')">Apple Inc (AAPL)</button>
+        </div>
     </div>
     <div class="col-sm json text-center">
-        International Business Machines Corp (IBM) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/IBM.json">IBM
-            JSON</a>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/IBM.json')">International Business Machines Corp (IBM)</button>
+        </div>
     </div>
     <div class="col-sm json text-center">
-        Citibank - <a href="https://www.quandl.com/api/v3/datasets/WIKI/CITI.json">CITI JSON</a>
-    </div>
-</div>
-<div *ngIf="!(loaderService.isLoading | async)" class="row">
-    <div class="col-sm json text-center">
-        American Express Co. (AXP) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/AXP.json">AXP JSON</a>
-    </div>
-    <div class="col-sm json text-center">
-        CVS Health Corp (CVS) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/CVS.json">CVS JSON</a>
-    </div>
-    <div class="col-sm json text-center">
-        General Electric Co (GE) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/GE.json">GE JSON</a>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/CITI.json')">Citibank (CITI)</button>
+        </div>
     </div>
 </div>
 <div *ngIf="!(loaderService.isLoading | async)" class="row">
     <div class="col-sm json text-center">
-        Microsoft Corporation (MSFT) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/MSFT.json">MSFT JSON</a>
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/AXP.json')">American Express Co. (AXP)</button>
+        </div>
+    </div>
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/CVS.json')">CVS Health Corp (CVS)</button>
+        </div>
+    </div>
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/GE.json')">General Electric Co (GE)</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="!(loaderService.isLoading | async)" class="row">
+    <div class="col-sm json text-center">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <button class="btn btn-link" (click)="fetchData('/MSFT.json')">Microsoft Corporation (MSFT)</button>
+        </div>
     </div>
     <div class="col-sm json text-center">
 
