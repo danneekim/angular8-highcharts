@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { User } from './_models';
-import { UserService, AuthenticationService } from './_services';
+import { UserService, AuthenticationService, LoaderService } from './_services';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,8 @@ export class AppComponent {
   constructor(
     private userService: UserService,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private loaderService: LoaderService
   ) {
   }
 
