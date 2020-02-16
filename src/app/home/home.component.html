@@ -9,23 +9,25 @@
     </div>
     <div class="col-sm">
         <span style="float: right;" class="btn btn-link">
-            <a  (click)="logout()">Log Out</a>
+            <a (click)="logout()">Log Out</a>
         </span>
     </div>
 </div>
 <div class="row">
-    <div class="col-sm json">
-        <p *ngIf="loaderService.isLoading | async">
-            Loading!
-          </p>
-          <p *ngIf="!(loaderService.isLoading | async)">
-            Not Loading!
-          </p>
+    <div *ngIf="loaderService.isLoading | async" class="col-sm json">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!(loaderService.isLoading | async)" class="col-sm json">
         Apple Inc (AAPL) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json">AAPL JSON</a>
         <button (click)="fetchData('/AAPL.json')">APPL.JSON</button>
     </div>
     <div class="col-sm json">
-        International Business Machines Corp (IBM) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/IBM.json">IBM JSON</a>
+        International Business Machines Corp (IBM) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/IBM.json">IBM
+            JSON</a>
     </div>
     <div class="col-sm json">
         Citibank - <a href="https://www.quandl.com/api/v3/datasets/WIKI/CITI.json">CITI JSON</a>
@@ -47,9 +49,9 @@
         Microsoft Corporation (MSFT) - <a href="https://www.quandl.com/api/v3/datasets/WIKI/MSFT.json">MSFT JSON</a>
     </div>
     <div class="col-sm json">
-        
+
     </div>
     <div class="col-sm json">
-        
+
     </div>
 </div>
