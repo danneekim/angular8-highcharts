@@ -6,6 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 export class LoaderService {
     // A BehaviourSubject is an Observable with a default value
     public isLoading = new BehaviorSubject<boolean>(false);
-
+    public timeStamp = new BehaviorSubject<string>('');
     constructor() {}
 }
