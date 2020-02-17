@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit {
       data => {
         let marketData;
         marketData = data;
-        console.log(marketData);
         let pointStartDate = '';
         let pointEndDate = '';
         let startYear = 0;
@@ -91,7 +90,7 @@ export class HomeComponent implements OnInit {
         this.options = {
           rangeSelector: {
             enabled: true,
-            selected: 2
+            selected: 3
           },
           tooltip: {
             valueDecimals: 2,
