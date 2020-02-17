@@ -90,22 +90,57 @@ export class HomeComponent implements OnInit {
       data => {
         let marketData;
         marketData = data;
+        console.log(marketData);
         let pointStartDate = '';
         let startYear = 0;
         let startMonth = 0;
         let startDay = 0;
+        // Set Start Date for Graph:
         pointStartDate = marketData.dataset.oldest_available_date.replace(/-/g, '/');
         startYear = parseFloat(pointStartDate.substring(0, 4));
         startMonth = parseFloat(pointStartDate.substring(5, 7)) - 1;
         startDay = parseFloat(pointStartDate.substring(8.9));
 
+        // Initialize new OHLC Array & Object
+        let newOHLCdataArray = [];
+        let ohlcDataObject = {
+          x: String,
+          open: Number,
+          high: Number,
+          low: Number,
+          close: Number
+        }
+        // Loop through market data & configure
+        marketData.dataset.data.forEach((arrayItem, index) => {
+          // Initialize temp array & counter
+          let initArray = [];
+          initArray = arrayItem.slice(0,5);
+          initArray.shift();
+          initArray.unshift(index);
+          newOHLCdataArray.push(initArray);
+
+          // reformat date for x-axis
+          // let newDateFormat = initArray.shift().replace(/-/g, '/');
+          // initArray.unshift(newDateFormat);
+
+          // set data values to ohlc object
+          // ohlcDataObject.x = initArray[0];
+          // ohlcDataObject.open = initArray[1];
+          // ohlcDataObject.high = initArray[2];
+          // ohlcDataObject.low = initArray[3];
+          // ohlcDataObject.close = initArray[4];
+
+          // push object into new ohlc data array
+          // newOHLCdataArray.push(ohlcDataObject);
+        });
+        console.log(newOHLCdataArray[0]);
         this.options = {
           rangeSelector: {
             selected: 2
           },
           tooltip: {
             formatter: function () {
-              return 'Date: ' + Highcharts.dateFormat('%b %e %y', this.x) 
+              return 'Date: ' + Highcharts.dateFormat('%b %e %y', this.x)
               // +'y: ' + this.y.toFixed(2);
             }
           },
@@ -125,6 +160,7 @@ export class HomeComponent implements OnInit {
           // series: [{
           //   type: 'ohlc',
           //   name: 'AAPL Stock Price',
+          //   turboThreshold: 500000,
           //   data: newOHLCdataArray,
           // }]
           series: [{
