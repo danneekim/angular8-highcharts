@@ -4,9 +4,11 @@
 
 > This project was created using Angular 8 and implements the Highcharts.js library to generate financial data graphs for company's market data fetched from [Quandl's API source](https://www.quandl.com/api/v3/datasets/).  
 
-> Deployed Site: https://angular8-highcharts.herokuapp.com/
+## Deployment:
+### https://angular8-highcharts.herokuapp.com/
 
 ## Table of Contents
+- [Deployment](#deployment)
 - [Installation](#installation)
 - [Features](#features)
 - [References](#references)
