@@ -17,10 +17,10 @@ export class AppComponent {
   profileName = 'Profile';
 
   constructor(
-    private userService: UserService,
-    private router: Router,
-    private authenticationService: AuthenticationService,
-    private loaderService: LoaderService
+    public userService: UserService,
+    public router: Router,
+    public authenticationService: AuthenticationService,
+    public loaderService: LoaderService
   ) {
   }
 

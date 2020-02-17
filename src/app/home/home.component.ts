@@ -34,12 +34,12 @@ export class HomeComponent implements OnInit {
   public options: any = {}
 
   constructor(
-    private authenticationService: AuthenticationService,
-    private userService: UserService,
-    private marketDataService: MarketDataService,
-    private loaderService: LoaderService,
-    private alertService: AlertService,
-    private router: Router
+    public authenticationService: AuthenticationService,
+    public userService: UserService,
+    public marketDataService: MarketDataService,
+    public loaderService: LoaderService,
+    public alertService: AlertService,
+    public router: Router
   ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
