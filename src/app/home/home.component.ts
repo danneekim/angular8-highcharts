@@ -31,44 +31,7 @@ export class HomeComponent implements OnInit {
   currentUser: User;
   users: User[] = [];
   graphGenerated: Boolean = false;
-  public options: any = {
-    // chart: {
-    //   type: 'scatter',
-    //   height: 700
-    // },
-    // title: {
-    //   text: 'Line Graph'
-    // },
-    // credits: {
-    //   enabled: false
-    // },
-    // tooltip: {
-    //   formatter: function () {
-    //     return 'x: ' + Highcharts.dateFormat('%e %b %y', this.x) +
-    //       'y: ' + this.y.toFixed(2);
-    //   }
-    // },
-    // xAxis: {
-    //   type: 'datetime',
-    //   labels: {
-    //     formatter: function () {
-    //       return Highcharts.dateFormat('%e %b %y', this.value);
-    //     }
-    //   }
-    // },
-    // series: [
-    //   {
-    //     name: 'Normal',
-    //     turboThreshold: 500000,
-    //     data: [[new Date('2018-01-25 18:38:31').getTime(), 2]]
-    //   },
-    //   {
-    //     name: 'Abnormal',
-    //     turboThreshold: 500000,
-    //     data: [[new Date('2018-02-05 18:38:31').getTime(), 7]]
-    //   }
-    // ]
-  }
+  public options: any = {}
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -92,14 +55,19 @@ export class HomeComponent implements OnInit {
         marketData = data;
         console.log(marketData);
         let pointStartDate = '';
+        let pointEndDate = '';
         let startYear = 0;
         let startMonth = 0;
         let startDay = 0;
+
         // Set Start Date for Graph:
         pointStartDate = marketData.dataset.oldest_available_date.replace(/-/g, '/');
         startYear = parseFloat(pointStartDate.substring(0, 4));
         startMonth = parseFloat(pointStartDate.substring(5, 7)) - 1;
         startDay = parseFloat(pointStartDate.substring(8.9));
+
+        // Set End Date for Graph:
+        pointEndDate = marketData.dataset.newest_available_date.replace(/-/g, '/');
 
         // Initialize high/low/mid arrays
         let highArray = [];
@@ -119,15 +87,12 @@ export class HomeComponent implements OnInit {
           midArray.push(midValue);
         });
 
+        // Set options for graph
         this.options = {
           rangeSelector: {
+            enabled: true,
             selected: 2
           },
-          // tooltip: {
-          //   formatter: function () {
-          //     return 'Date: ' + Highcharts.dateFormat('%b %e %y', this.x) 
-          //   }
-          // },
           tooltip: {
             valueDecimals: 2,
             valuePrefix: '$',
@@ -137,7 +102,9 @@ export class HomeComponent implements OnInit {
             text: marketData.dataset.name
           },
           xAxis: {
-            type: 'datetime'
+            type: 'datetime',
+            min: new Date(pointStartDate).getTime(),
+            max: new Date(pointEndDate).getTime()
           },
           plotOptions: {
             series: {
@@ -148,22 +115,25 @@ export class HomeComponent implements OnInit {
           series: [
             {
               name: 'High',
+              step: 'left',
               data: highArray
-            }, 
+            },
             {
               name: 'Mid',
+              step: 'center',
               data: midArray
             },
             {
               name: 'Low',
+              step: 'right',
               data: lowArray
             }
           ]
         }
-        
+
         this.graphGenerated = true;
         if (this.options != {} && this.graphGenerated === true) {
-  
+
           Highcharts.chart('graphContainer', this.options);
         }
       },
