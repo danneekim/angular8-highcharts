@@ -1,19 +1,14 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <p class="navbar-brand" >Angular 8 <span class="text-info">Highcharts</span></p>
+    <a class="navbar-brand" >Angular 8 <span class="text-info">Highcharts</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div *ngIf="currentUser" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav nav-tabs mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
+        <!-- Return for future development -->
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Fetch Data
@@ -23,12 +18,12 @@
             <a class="dropdown-item" routerLink="#">Another action</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" routerLink="#">Something else here</a>
-          </div>
-        </li>
+          </div> 
+        </li> -->
       </ul>
       <ul class="nav my-2 my-lg-0">
         <li class="nav-item">
-          <a class="nav-link disabled">Timestamp Updated: {{timestamp}}</a>
+          <a *ngIf="(loaderService.timeStamp | async)" class="nav-link disabled">Last Updated: {{loaderService.timeStamp | async}}</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"
@@ -36,7 +31,7 @@
             <i class="fa fa-user"></i>
             {{currentUser.firstName}} </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-            <a class="dropdown-item waves-effect waves-light" (click)="logout()">Log out</a>
+            <a class="dropdown-item waves-effect waves-light text-danger" (click)="logout()">Log out</a>
           </div>
         </li>
       </ul>
