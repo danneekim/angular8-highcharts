@@ -101,48 +101,37 @@ export class HomeComponent implements OnInit {
         startMonth = parseFloat(pointStartDate.substring(5, 7)) - 1;
         startDay = parseFloat(pointStartDate.substring(8.9));
 
-        // Initialize new OHLC Array & Object
-        let newOHLCdataArray = [];
-        let ohlcDataObject = {
-          x: String,
-          open: Number,
-          high: Number,
-          low: Number,
-          close: Number
-        }
-        // Loop through market data & configure
-        marketData.dataset.data.forEach((arrayItem, index) => {
-          // Initialize temp array & counter
-          let initArray = [];
-          initArray = arrayItem.slice(0,5);
-          initArray.shift();
-          initArray.unshift(index);
-          newOHLCdataArray.push(initArray);
+        // Initialize high/low/mid arrays
+        let highArray = [];
+        let lowArray = [];
+        let midArray = [];
 
-          // reformat date for x-axis
-          // let newDateFormat = initArray.shift().replace(/-/g, '/');
-          // initArray.unshift(newDateFormat);
+        marketData.dataset.data.forEach(arrayItem => {
+          // Initialize temp array 
+          let initArray = arrayItem;
 
-          // set data values to ohlc object
-          // ohlcDataObject.x = initArray[0];
-          // ohlcDataObject.open = initArray[1];
-          // ohlcDataObject.high = initArray[2];
-          // ohlcDataObject.low = initArray[3];
-          // ohlcDataObject.close = initArray[4];
+          // Push High/Low value into respective arrays
+          highArray.push(initArray[2]);
+          lowArray.push(initArray[3]);
 
-          // push object into new ohlc data array
-          // newOHLCdataArray.push(ohlcDataObject);
+          // Calculate Avg value and push into midArray
+          let midValue = (arrayItem[2] + arrayItem[3]) / 2
+          midArray.push(midValue);
         });
-        console.log(newOHLCdataArray[0]);
+
         this.options = {
           rangeSelector: {
             selected: 2
           },
+          // tooltip: {
+          //   formatter: function () {
+          //     return 'Date: ' + Highcharts.dateFormat('%b %e %y', this.x) 
+          //   }
+          // },
           tooltip: {
-            formatter: function () {
-              return 'Date: ' + Highcharts.dateFormat('%b %e %y', this.x)
-              // +'y: ' + this.y.toFixed(2);
-            }
+            valueDecimals: 2,
+            valuePrefix: '$',
+            valueSuffix: ' USD'
           },
           title: {
             text: marketData.dataset.name
@@ -153,24 +142,28 @@ export class HomeComponent implements OnInit {
           plotOptions: {
             series: {
               pointStart: Date.UTC(startYear, startMonth, startDay),
-              // pointStart: Date.UTC(2010, 0, 1),
-              pointInterval: 24 * 3600 * 1000 // one day
+              pointInterval: 24 * 3600 * 1000, // one day
             }
           },
-          // series: [{
-          //   type: 'ohlc',
-          //   name: 'AAPL Stock Price',
-          //   turboThreshold: 500000,
-          //   data: newOHLCdataArray,
-          // }]
-          series: [{
-            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-          }, {
-            data: [144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2]
-          }]
+          series: [
+            {
+              name: 'High',
+              data: highArray
+            }, 
+            {
+              name: 'Mid',
+              data: midArray
+            },
+            {
+              name: 'Low',
+              data: lowArray
+            }
+          ]
         }
+        
         this.graphGenerated = true;
         if (this.options != {} && this.graphGenerated === true) {
+  
           Highcharts.chart('graphContainer', this.options);
         }
       },
