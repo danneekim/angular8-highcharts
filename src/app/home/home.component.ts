@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
     // },
     // tooltip: {
     //   formatter: function () {
-    //     return 'x: ' + Highcharts.dateFormat('%e %b %y %H:%M:%S', this.x) +
+    //     return 'x: ' + Highcharts.dateFormat('%e %b %y', this.x) +
     //       'y: ' + this.y.toFixed(2);
     //   }
     // },
@@ -102,6 +102,12 @@ export class HomeComponent implements OnInit {
         this.options = {
           rangeSelector: {
             selected: 2
+          },
+          tooltip: {
+            formatter: function () {
+              return 'Date: ' + Highcharts.dateFormat('%b %e %y', this.x) 
+              // +'y: ' + this.y.toFixed(2);
+            }
           },
           title: {
             text: marketData.dataset.name
