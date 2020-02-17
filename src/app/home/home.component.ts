@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import * as Highcharts from 'highcharts/highstock';
 
 import { User } from '../_models';
-import { 
-  UserService, 
-  AuthenticationService, 
-  MarketDataService, 
-  LoaderService
+import {
+  UserService,
+  AuthenticationService,
+  MarketDataService,
+  LoaderService, 
+  AlertService
 } from '../_services';
 
 declare var require: any;
@@ -28,8 +29,9 @@ noData(Highcharts);
 
 export class HomeComponent implements OnInit {
   currentUser: User;
+  users: User[] = []; 
   graphGenerated: Boolean = false;
-  users: User[] = [];  public options: any = {
+  public options: any = {
     chart: {
       type: 'scatter',
       height: 700
@@ -74,26 +76,32 @@ export class HomeComponent implements OnInit {
     private userService: UserService,
     private marketDataService: MarketDataService,
     private loaderService: LoaderService,
+    private alertService: AlertService,
     private router: Router
   ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
-  
-
   ngOnInit() {
   }
 
-  fetchData(apiJson){
-    this.marketDataService.getMarketData(apiJson).subscribe(data => {
-      console.log(data)
-      if (data){
-        this.graphGenerated = true;
-        if (data && this.graphGenerated === true){
-          Highcharts.chart('graphContainer', this.options);
+  fetchData(apiJson) {
+    this.alertService.destroy();
+    this.marketDataService.getMarketData(apiJson).subscribe(
+      data => {
+        console.log(data)
+        if (data) {
+          this.graphGenerated = true;
+          if (data && this.graphGenerated === true) {
+            Highcharts.chart('graphContainer', this.options);
+          }
         }
+      },
+      error => {
+        Highcharts.chart('graphContainer', {});
+        this.alertService.error(error);
       }
-    })
+    )
   }
 
   logout() {
