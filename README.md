@@ -58,13 +58,6 @@ $ ** Angular Live Development Server is listening on localhost:4200, open your b
 - https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons
 - https://www.c-sharpcorner.com/article/how-to-install-font-awesome-in-angular/
 
-### User Authenication / Registration
-- https://jasonwatmore.com/post/2019/04/24/angular-7-tutorial-part-2-create-base-project-structure-webpack-config
-- https://jasonwatmore.com/post/2019/04/29/angular-7-tutorial-part-3-add-routing-multiple-pages
-- https://jasonwatmore.com/post/2019/05/17/angular-7-tutorial-part-4-login-form-authentication-service-route-guard
-- https://jasonwatmore.com/post/2019/05/22/angular-7-tutorial-part-5-registration-form-user-service
-- https://jasonwatmore.com/post/2019/05/31/angular-7-tutorial-part-6-home-page-alert-component
-
 ### Angular - Highcharts
 - https://api.highcharts.com/highstock/
 - https://www.highcharts.com/blog/post/highcharts-and-angular-7/
