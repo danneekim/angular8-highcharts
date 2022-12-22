@@ -2,12 +2,14 @@
 
 # Angular8-Highcharts
 
-> This project was created using Angular 8 and implements the Highcharts.js library to generate financial data graphs for company's market data fetched from [Quandl's API source](https://www.quandl.com/api/v3/datasets/).  
+> This project was created using Angular 8 and implements the Highcharts.js library to generate financial data graphs for company's market data fetched from [Quandl's API source](https://www.quandl.com/api/v3/datasets/).
 
 ## Deployed Site:
-### https://angular8-highcharts.herokuapp.com/
+
+### https://danneekim.github.io/angular8-highcharts/
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Features](#features)
 - [References](#references)
@@ -25,6 +27,7 @@
 ```shell
 $ npm install
 ```
+
 > After installation run commands
 
 ```shell
@@ -32,9 +35,11 @@ $ ng serve
 $ ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 ℹ ｢wdm｣: Compiled successfully.
 ```
+
 > The application will be running on your browser at `http://localhost:4200/`!
 
 ## Features
+
 - User is able to login using their username and password.
 - User is able to register new account.
 - User is able to log out of their account.
@@ -54,16 +59,10 @@ $ ** Angular Live Development Server is listening on localhost:4200, open your b
 ## References
 
 ### Bootstrap
+
 - https://www.techiediaries.com/angular-bootstrap/
 - https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons
-- https://www.c-sharpcorner.com/article/how-to-install-font-awesome-in-angular/
 
 ### Angular - Highcharts
-- https://api.highcharts.com/highstock/
-- https://www.highcharts.com/blog/post/highcharts-and-angular-7/
-- https://www.tutorialspoint.com/angular_highcharts/angular_highcharts_quick_guide.htm
 
-### Build / Deployment
-- https://codemeals.com/angular-tutorials/deploy-angular-7-app-to-heroku/
-- https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true
-- https://levelup.gitconnected.com/simple-application-with-angular-6-node-js-express-2873304fff0f
+- https://api.highcharts.com/highstock/
