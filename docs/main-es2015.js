@@ -41,7 +41,7 @@ module.exports = "<div *ngIf=\"message\" [ngClass]=\"{ 'alert': message, 'alert-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar fixed-top navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" >Angular 8 <span class=\"text-info\">Highcharts</span></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\n      aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div *ngIf=\"currentUser\" class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n      <ul class=\"nav nav-tabs mr-auto\">\n        <!-- Return for future development -->\n        <!-- <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle\" routerLink=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n            aria-haspopup=\"true\" aria-expanded=\"false\">\n            Fetch Data\n          </a>\n          <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n            <a class=\"dropdown-item\" routerLink=\"#\">Action</a>\n            <a class=\"dropdown-item\" routerLink=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" routerLink=\"#\">Something else here</a>\n          </div> \n        </li> -->\n      </ul>\n      <ul class=\"nav my-2 my-lg-0\">\n        <li class=\"nav-item\">\n          <a *ngIf=\"(loaderService.timeStamp | async)\" class=\"nav-link disabled\">Last Updated: {{loaderService.timeStamp | async}}</a>\n        </li>\n        <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle waves-effect waves-light\" id=\"navbarDropdownMenuLink-4\"\n            data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            <i class=\"fa fa-user\"></i>\n            {{currentUser.firstName}} </a>\n          <div class=\"dropdown-menu dropdown-menu-right dropdown-info\" aria-labelledby=\"navbarDropdownMenuLink-4\">\n            <a class=\"dropdown-item waves-effect waves-light text-danger\" (click)=\"logout()\">Log out</a>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <div class=\"col-md-6 offset-md-3 mt-5\">\n    <alert></alert>\n  </div>\n  <router-outlet></router-outlet>\n</div>\n\n<!-- loader div -->\n<div *ngIf=\"loaderService.isLoading | async\" class=\"loader\">\n  <div class=\"d-flex justify-content-center align-items-center h-100\">\n      <div class=\"spinner-grow text-info\" role=\"status\">\n          <span class=\"sr-only\">Loading...</span>\n      </div>\n  </div>\n</div>\n\n<footer class=\"footer mt-auto bg-light fixed-bottom\">\n  <div class=\"container-fluid py-2\">\n    <div class=\"row\">\n      <!-- Icon/Links -->\n      <div class=\"col-4\">\n        <ul class=\"nav mr-auto\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"https://github.com/danneekim/angular8-highcharts\">\n              <i class=\"fa fa-github fa-lg\"></i>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"https://www.linkedin.com/in/dannee-kim/\">\n              <i class=\"fa fa-linkedin fa-lg\"></i>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"mailto:dannee.kim.wd@gmail.com\">\n              <i class=\"fa fa-google fa-lg\"></i>\n            </a>\n          </li>\n        </ul>\n      </div>\n      <!-- Copyright -->\n      <div class=\"col-4 py-2\">\n        <div class=\"footer-copyright text-center\">© 2020 Copyright:\n          <a>Dannee Kim</a>\n        </div>\n      </div>\n      <!-- Placeholder -->\n      <div class=\"col-4\">\n        &nbsp;\n      </div>\n    </div>\n  </div>\n</footer>\n<!-- <app-footer></app-footer> -->"
+module.exports = "<nav class=\"navbar fixed-top navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\"\n      >Angular 8 <span class=\"text-info\">Highcharts</span></a\n    >\n    <button\n      class=\"navbar-toggler\"\n      type=\"button\"\n      data-toggle=\"collapse\"\n      data-target=\"#navbarSupportedContent\"\n      aria-controls=\"navbarSupportedContent\"\n      aria-expanded=\"false\"\n      aria-label=\"Toggle navigation\"\n    >\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div\n      *ngIf=\"currentUser\"\n      class=\"collapse navbar-collapse\"\n      id=\"navbarSupportedContent\"\n    >\n      <ul class=\"nav nav-tabs mr-auto\">\n        <!-- Return for future development -->\n        <!-- <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle\" routerLink=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n            aria-haspopup=\"true\" aria-expanded=\"false\">\n            Fetch Data\n          </a>\n          <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n            <a class=\"dropdown-item\" routerLink=\"#\">Action</a>\n            <a class=\"dropdown-item\" routerLink=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" routerLink=\"#\">Something else here</a>\n          </div> \n        </li> -->\n      </ul>\n      <ul class=\"nav my-2 my-lg-0\">\n        <li class=\"nav-item\">\n          <a *ngIf=\"loaderService.timeStamp | async\" class=\"nav-link disabled\"\n            >Last Updated: {{ loaderService.timeStamp | async }}</a\n          >\n        </li>\n        <li class=\"nav-item dropdown\">\n          <a\n            class=\"nav-link dropdown-toggle waves-effect waves-light\"\n            id=\"navbarDropdownMenuLink-4\"\n            data-toggle=\"dropdown\"\n            aria-haspopup=\"true\"\n            aria-expanded=\"true\"\n          >\n            <i class=\"fa fa-user\"></i>\n            {{ currentUser.firstName }}\n          </a>\n          <div\n            class=\"dropdown-menu dropdown-menu-right dropdown-info\"\n            aria-labelledby=\"navbarDropdownMenuLink-4\"\n          >\n            <a\n              class=\"dropdown-item waves-effect waves-light text-danger\"\n              (click)=\"logout()\"\n              >Log out</a\n            >\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <div class=\"col-md-6 offset-md-3 mt-5\">\n    <alert></alert>\n  </div>\n  <router-outlet></router-outlet>\n</div>\n\n<!-- loader div -->\n<div *ngIf=\"loaderService.isLoading | async\" class=\"loader\">\n  <div class=\"d-flex justify-content-center align-items-center h-100\">\n    <div class=\"spinner-grow text-info\" role=\"status\">\n      <span class=\"sr-only\">Loading...</span>\n    </div>\n  </div>\n</div>\n\n<footer class=\"footer mt-auto bg-light fixed-bottom\">\n  <div class=\"container-fluid py-2\">\n    <div class=\"row\">\n      <!-- Icon/Links -->\n      <div class=\"col-4\">\n        <ul class=\"nav mr-auto\">\n          <li class=\"nav-item\">\n            <a\n              class=\"nav-link\"\n              href=\"https://github.com/danneekim/angular8-highcharts\"\n            >\n              <i class=\"fa fa-github fa-lg\"></i>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"https://www.linkedin.com/in/dannee-kim/\">\n              <i class=\"fa fa-linkedin fa-lg\"></i>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"mailto:dannee.kim.dev@gmail.com\">\n              <i class=\"fa fa-google fa-lg\"></i>\n            </a>\n          </li>\n        </ul>\n      </div>\n      <!-- Copyright -->\n      <div class=\"col-4 py-2\">\n        <div class=\"footer-copyright text-center\">\n          © 2022 Copyright:\n          <a>Dannee Kim</a>\n        </div>\n      </div>\n      <!-- Placeholder -->\n      <div class=\"col-4\">&nbsp;</div>\n    </div>\n  </div>\n</footer>\n<!-- <app-footer></app-footer> -->\n"
 
 /***/ }),
 
@@ -1302,33 +1302,32 @@ let HomeComponent = class HomeComponent {
         this.users = [];
         this.graphGenerated = false;
         this.options = {};
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
     }
-    ngOnInit() {
-    }
+    ngOnInit() { }
     fetchData(apiJson) {
         this.alertService.destroy();
-        this.marketDataService.getMarketData(apiJson).subscribe(data => {
+        this.marketDataService.getMarketData(apiJson).subscribe((data) => {
             let marketData;
             marketData = data;
-            let pointStartDate = '';
-            let pointEndDate = '';
+            let pointStartDate = "";
+            let pointEndDate = "";
             let startYear = 0;
             let startMonth = 0;
             let startDay = 0;
             // Set Start Date for Graph:
-            pointStartDate = marketData.dataset.oldest_available_date.replace(/-/g, '/');
+            pointStartDate = marketData.dataset.oldest_available_date.replace(/-/g, "/");
             startYear = parseFloat(pointStartDate.substring(0, 4));
             startMonth = parseFloat(pointStartDate.substring(5, 7)) - 1;
             startDay = parseFloat(pointStartDate.substring(8.9));
             // Set End Date for Graph:
-            pointEndDate = marketData.dataset.newest_available_date.replace(/-/g, '/');
+            pointEndDate = marketData.dataset.newest_available_date.replace(/-/g, "/");
             // Initialize high/low/mid arrays
             let highArray = [];
             let lowArray = [];
             let midArray = [];
-            marketData.dataset.data.forEach(arrayItem => {
-                // Initialize temp array 
+            marketData.dataset.data.forEach((arrayItem) => {
+                // Initialize temp array
                 let initArray = arrayItem;
                 // Push High/Low value into respective arrays
                 highArray.push(initArray[2]);
@@ -1341,57 +1340,57 @@ let HomeComponent = class HomeComponent {
             this.options = {
                 rangeSelector: {
                     enabled: true,
-                    selected: 3
+                    selected: 3,
                 },
                 tooltip: {
                     valueDecimals: 2,
-                    valuePrefix: '$',
-                    valueSuffix: ' USD'
+                    valuePrefix: "$",
+                    valueSuffix: " USD",
                 },
                 title: {
-                    text: marketData.dataset.name
+                    text: marketData.dataset.name,
                 },
                 xAxis: {
-                    type: 'datetime',
+                    type: "datetime",
                     min: new Date(pointStartDate).getTime(),
-                    max: new Date(pointEndDate).getTime()
+                    max: new Date(pointEndDate).getTime(),
                 },
                 plotOptions: {
                     series: {
                         pointStart: Date.UTC(startYear, startMonth, startDay),
                         pointInterval: 24 * 3600 * 1000,
-                    }
+                    },
                 },
                 series: [
                     {
-                        name: 'High',
-                        step: 'left',
-                        data: highArray
+                        name: "High",
+                        step: "left",
+                        data: highArray,
                     },
                     {
-                        name: 'Mid',
-                        step: 'center',
-                        data: midArray
+                        name: "Mid",
+                        step: "center",
+                        data: midArray,
                     },
                     {
-                        name: 'Low',
-                        step: 'right',
-                        data: lowArray
-                    }
-                ]
+                        name: "Low",
+                        step: "right",
+                        data: lowArray,
+                    },
+                ],
             };
             this.graphGenerated = true;
             if (this.options != {} && this.graphGenerated === true) {
-                highcharts_highstock__WEBPACK_IMPORTED_MODULE_3__["chart"]('graphContainer', this.options);
+                highcharts_highstock__WEBPACK_IMPORTED_MODULE_3__["chart"]("graphContainer", this.options);
             }
-        }, error => {
-            highcharts_highstock__WEBPACK_IMPORTED_MODULE_3__["chart"]('graphContainer', {});
+        }, (error) => {
+            highcharts_highstock__WEBPACK_IMPORTED_MODULE_3__["chart"]("graphContainer", {});
             this.alertService.error(error);
         });
     }
     logout() {
         this.authenticationService.logout();
-        this.router.navigate(['/login']);
+        this.router.navigate(["/login"]);
     }
 };
 HomeComponent.ctorParameters = () => [
@@ -1404,7 +1403,7 @@ HomeComponent.ctorParameters = () => [
 ];
 HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-home',
+        selector: "app-home",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")).default]
     })
